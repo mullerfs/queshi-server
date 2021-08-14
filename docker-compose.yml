@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  queshi-backend:
+    build: .
+    container_name: queshi-bachend
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/app
+    depends_on:
+      - queshi-db
+  queshi-db:
+    image: mariadb
+    restart: always
+    container_name: queshi-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 'fQ3S83t56DGW'
+    volumes:
+      - ./mysql-volume:/var/lib/mysql
+      - ./mysql-conf:/etc/mysql
+    ports:
+      - 127.0.0.1:3307:3306
+  phpadmin:
+    image: phpmyadmin/phpmyadmin:edge
+    restart: always
+    environment:
+      PMA_HOST: queshi-db
+    ports:
+      - 127.0.0.1:8011:80
+    
