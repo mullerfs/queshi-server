@@ -6,6 +6,8 @@ services:
     container_name: queshi-server
     ports:
       - 5000:5000
+    environment:
+      - FLASK_ENV=prod
     volumes:
       - .:/app
     depends_on:
@@ -15,7 +17,7 @@ services:
     restart: always
     container_name: queshi-db
     environment:
-      MYSQL_ROOT_PASSWORD: 'fQ3S83t56DGW'
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     volumes:
       - ./mysql-volume:/var/lib/mysql
       - ./mysql-conf:/etc/mysql

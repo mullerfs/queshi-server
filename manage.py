@@ -1,7 +1,10 @@
 import os
 import click
+from dotenv import load_dotenv
+load_dotenv()
 
 from app import create_app, db
+
 
 env = os.getenv("FLASK_ENV") or "dev"
 print(f"Active environment: * {env} *")
