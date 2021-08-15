@@ -1,9 +1,9 @@
 version: "3"
 
 services:
-  queshi-backend:
+  queshi-server:
     build: .
-    container_name: queshi-bachend
+    container_name: queshi-server
     ports:
       - 5000:5000
     volumes:

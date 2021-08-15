@@ -3,7 +3,8 @@ FROM python:3.6.5
 WORKDIR /app
 
 # Copiando arquivos da pasta local para dentro do Docker
-ADD . /app
+ADD main.py /app/
+ADD main.py /app
 
 # Instalando as dependências dentro do Docker
 RUN pip install -r requirements.txt
