@@ -35,7 +35,7 @@ For security reason, The local env file is on ``.gitignore`` file. You must crea
 
 ```bash
 cat .env
- DB_PASSWORD="fQ3S83t56DGW"
+ DB_PASSWORD="YOUR_PASSWORD_GOES_HERE"
  FLASK_APP=manage.py
 ```
 ## 1.2 Creating database
